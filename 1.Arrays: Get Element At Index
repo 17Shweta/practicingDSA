@@ -1,0 +1,93 @@
+code: 
+
+//Get Element At Index
+
+// { Driver Code Starts
+//Initial Template for C++
+#include <iostream>
+using namespace std;
+
+
+ // } Driver Code Ends
+
+
+//User function Template for C++
+
+//Complete this function
+int getByIndex(int arr[],int n,int i)
+{
+    //Your code here
+    if(i<=n)
+        return arr[i];
+    else
+        return -1;
+        
+}
+
+
+// { Driver Code Starts.
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int arr[n];
+	    for(int i=0;i<n;i++)
+	    cin>>arr[i];
+	    
+	    int i;
+	    cin>>i;
+	    
+	    
+	    cout<<getByIndex(arr,n,i)<<endl;
+	    
+	}
+	return 0;
+}  // } Driver Code Ends
+
+
+
+
+
+
+que : Get Element At Index
+You are given an array arr(0-based indexing). The size of the array is given by n. You need to get the element at index i and print it. If no element exists at i then print -1.
+
+Input Format:
+The first line of input contains T denoting the number of testcases. T testcases follow. Each testcase contains three lines of input. The first line contains the size of the array denoted by n. The second line contains n elements separated by spaces. The third line contains the index i.
+
+Output Format:
+For each testcase, in a new line, print the element at index i.
+
+Your Task:
+This is a function problem. The input is already taken care of by the driver code. You only need to complete the function getByIndex() that takes arr, n, i as input and return the required result. The driver code takes care of the printing.
+
+Expected Time Complexity: O(1).
+Expected Auxiliary Space: O(1).
+
+Constraints:
+1 <= T <= 100
+1 <= n<= 103
+0 <= arri <= 106
+1 <= index <= 106
+
+Examples:
+Input:
+2
+6
+1 2 3 4 5 6
+0
+4
+1 2 3 4
+4
+
+Output:
+1
+-1
+
+Explanation:
+Testcase 1: The array is {1 2 3 4 5 6}. The index given is 0. so element at 0th index is 1.
+Testcase 2: The array is {1 2 3 4}. The index given is 4. Here no element exists at the 4th index, so the answer is -1.
