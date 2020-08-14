@@ -1,3 +1,3 @@
 # practicing_dsa_with_GFG
-Trying to acquire habit of coding to next level by practicing with selected gfg questions.
+Trying to acquire habit of coding to next level by practicing with selected gfg questions./n
 1.Arrays
