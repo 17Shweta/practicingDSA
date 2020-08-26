@@ -1,0 +1,52 @@
+Vowels in String 
+You are given a string s. You need to count the total vowels in the string. The string s contains lowercase letters only.
+
+Example 1:
+
+Input:
+s = geeks
+Output: 2
+
+
+
+code:
+
+// { Driver Code Starts
+//Initial Template for C++
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int countVowels(string str);
+
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	string s;
+	cin >> s;
+	
+	cout << countVowels(s) << endl;
+	}
+	return 0;
+	
+}
+
+// } Driver Code Ends
+
+
+//User function Template for C++
+
+int countVowels(string x){
+  int c=0;
+  int l=x.length();
+  //Your code here
+  for(int i=0;i<l;++i)
+  {
+      if(x[i]=='a'||x[i]=='e'||x[i]=='i'||x[i]=='o'||x[i]=='u')
+              c++;
+  }
+    return c;
+}
