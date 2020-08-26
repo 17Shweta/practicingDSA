@@ -1,0 +1,73 @@
+
+
+Count Distinct Vowels in String 
+You are given a string s. You need to count the total distinct vowels in the string. The string s contains lowercase letters only.
+
+Example 1:
+
+Input:
+s = geeks
+Output: 1
+Example 2:
+
+Input:
+s = world
+Output: 1
+
+code: 
+// { Driver Code Starts
+//Initial Template for C++
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int countVowels(string str);
+
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+
+	string s;
+	cin >> s;
+	
+	cout << countVowels(s) << endl;
+	
+	}
+	return 0;
+	
+}
+
+// } Driver Code Ends
+
+
+//User function Template for C++
+
+
+int countVowels(string str){
+    
+   //Your code here
+    int n=str.length();
+    int s=0;
+    int arr[256]={0};
+    int arrlen = sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<n;++i)
+    {
+        if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'||str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U')
+        {
+           for(int j=0;j<arrlen;j++)
+            {   
+                if(arr[str[i]]==0)
+                {
+                    arr[str[i]]++;
+                    s++;
+                }
+            }
+       }
+    }
+    return s;
+    
+}
