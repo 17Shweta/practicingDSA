@@ -1,0 +1,70 @@
+
+
+Panagram Checking 
+You are given a string s. You need to find if the string is a panagram or not.
+A panagram contains all the letters of english alphabet at least once.
+
+Example 1:
+
+Input:
+s = Thequickbrownfoxjumpsoverthelazydog
+Output: 1
+Example 2:
+
+Input:
+s = HeavyDuty
+Output: 0
+
+code: 
+
+// { Driver Code Starts
+//Initial Template for C++
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// A panagram is a string with every letter in the english alphabet present in the string
+
+
+bool isPanagram(string str);
+
+int main() {
+	
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	string s;
+	cin >> s;
+	
+	cout << isPanagram(s) << endl;
+	}
+	
+	return 0;
+	
+}
+
+// } Driver Code Ends
+
+
+//User function Template for C++
+
+bool isPanagram(string str){
+
+//Your code here
+int arr[256]={0};
+bool mark = true;
+for(int i=0;i<str.length();i++)
+{
+    arr[str[i]]++;
+}
+
+for(int i=0;i<256;i++)
+{
+    if(arr[str[i]]==0)
+      {mark = false;
+      break;
+      }
+}
+return mark;
+}
