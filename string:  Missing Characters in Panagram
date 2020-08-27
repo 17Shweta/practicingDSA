@@ -1,0 +1,108 @@
+
+Missing Characters in Panagram 
+You are given a string s. You need to find the missing characters in the string to make a panagram.
+Note: The output characters will be lowercase and lexicographically sorted.
+
+Example 1:
+
+Input:
+s = Abcdefghijklmnopqrstuvwxy
+Output: z
+Example 2:
+
+Input:
+s = Abc
+Output: defghijklmnopqrstuvwxyz
+
+code:
+
+// { Driver Code Starts
+//Initial Template for C++
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// A panagram is a string with every letter in the english alphabet present in the string
+
+string missingPanagram(string str);
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	string s;
+	cin >> s;
+	
+	cout << missingPanagram(s) << endl;
+	}
+	return 0;
+	
+}
+
+// } Driver Code Ends
+
+
+//User function Template for C++
+
+const int MAX_CHAR = 26; 
+
+string missingPanagram(string str){
+
+ //Your code here
+    bool present[MAX_CHAR] = {false}; 
+  transform(str.begin(),str.end(),str.begin(),::tolower);
+  for(int i=0;i<str.length();i++)
+  {
+      if(str[i]>='a' && str[i]<='z')
+      {
+          present[str[i]-'a'] =true;
+      }
+  }
+  string s="";
+  for(int i=0;i<MAX_CHAR;i++)
+  {
+      if(present[i]==false)
+      {
+          s.push_back((char)(i+'a'));
+      }
+  }
+  return s;
+    
+}
+
+
+
+
+
+
+
+
+
+
+//think why it is wrong??
+//remember the mistakes
+
+// char arr[256]={0};
+//     string newarr;
+    
+//     transform(str.begin(),str.end(),str.begin(),::tolower);
+    
+//     for(int i=0;i<256;i++)
+//     {
+//         arr[str[i]]++;
+//     }
+    
+//     for(int i=0;i<256;i++)
+//     {
+//         if(arr[str[i]]==0)
+//           {
+//             newarr.push_back(str[i]);     
+//           }
+//     }
+    
+//     return newarr;    
+
+
+
