@@ -1,0 +1,78 @@
+//uppercase conversion without using library
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    string str = "aBCDERGFh23";
+    int i;
+    while(str[i]!='\0')
+    {
+        if(str[i]>='a' && str[i]<='z')
+        {
+            str[i]=str[i]-32;
+        }
+        ++i;
+    }
+    cout<<str<<endl;
+    return 0;
+}
+
+
+//using inbuilt function
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string su = "1. He is NOT froM INDIA";
+    transform(su.begin(),su.end(),su.begin(),::toupper); 
+    cout<<su<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+//lowercase conversion without using library
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string str = "aBCDERGFh23";
+    int i;
+    while(str[i]!='\0')
+    {
+        if(str[i]>='A' && str[i]<='Z')
+        {
+            str[i]=str[i]+32;
+        }
+        ++i;
+    }
+    cout<<str<<endl;
+    return 0;
+}
+
+
+//using inbuilt function
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string su = "1. He is NOT froM INDIA";
+    transform(su.begin(),su.end(),su.begin(),::tolower); 
+    cout<<su<<endl;
+    return 0;
+}
+
