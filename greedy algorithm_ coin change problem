@@ -1,0 +1,35 @@
+
+//greedy algorithm: use minimum coins to count the given amount
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int minCoins(int coins[],int n,int amount)
+{
+  int res=0;  
+  sort(coins,coins+n,greater<int>());
+  for(int i=0;i<n;i++)
+  {
+      if(coins[i]<=amount)
+      {
+          int change = floor(amount/coins[i]);
+          res = res+change;
+          amount = amount-(change*coins[i]);
+      }
+      if(amount ==0)
+        break;
+  }
+  return res;
+}
+
+int main()
+{
+    int coins[4]={2,1,5,10};
+    int n=4;
+    int amount = 52;
+    cout<<minCoins(coins,n,amount);
+    return 0;
+}
+output:
+6

@@ -1,0 +1,29 @@
+//pair: Sort an array according to other
+
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+void sortChar(int a[],int b[],int n)
+{
+    pair<int,char> pa[n];
+    for(int i=0;i<n;i++)
+    {
+        pa[i]={a[i],b[i]};
+    }
+    sort(pa,pa+n);
+    for(int i=0;i<n;i++)
+    {
+        cout<<pa[i].second<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    int a[] = {3,4,2,1};
+    int b[] = {'c','a','y','r'};
+    int n = sizeof(a)/sizeof(a[0]);
+    sortChar(a,b,n);
+    return 0;
+}

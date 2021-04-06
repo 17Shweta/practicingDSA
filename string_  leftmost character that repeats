@@ -1,0 +1,31 @@
+
+
+//find the leftmost character that repeats
+//abbcdab : here leftmost character is "a" that is repeating 
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int firstRepeat(string s)
+{
+    int res = INT_MAX;
+    int fi[256];
+    fill(fi,fi+256,-1);
+    for(int i=s.length();i>=0;i--)
+    {
+       if(fi[s[i]]==-1)
+            fi[s[i]]=i;
+       else
+           res = min(res,fi[s[i]]);
+    }
+    return (res==INT_MAX)?-1:res;
+}
+
+int main()
+{
+    string s;
+    cin>>s;
+    cout<<firstRepeat(s);
+    return 0;
+}

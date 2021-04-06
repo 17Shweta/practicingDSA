@@ -1,0 +1,25 @@
+
+//check if given two strings are rotations of each other or not
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+bool areRotations(string s1,string s2)
+{
+    if(s1.length()!=s2.length())
+        return false;
+    s1=s1+s1;
+    return (s1.find(s2)!=string ::npos);
+}
+
+int main()
+{
+    string s1,s2;
+    cin>>s1>>s2;
+    if(areRotations(s1,s2))
+        cout<<"true";
+    else
+        cout<<"false";
+    return 0;
+}

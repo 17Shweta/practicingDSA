@@ -1,0 +1,29 @@
+
+// get list of all smaller elements which are smaller then k
+
+
+#include <stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> getSmaller(int arr[],int n,int k)
+{
+    vector<int> res;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]<k)
+        res.push_back(arr[i]);
+    }
+    return res;
+}
+
+int main()
+{
+    int arr[] = {8,100,20,40,3,7};
+    int k=10;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    vector<int>res = getSmaller(arr,n,k);
+    for(auto x:res)
+    cout<<x<<" ";
+    return 0;
+}

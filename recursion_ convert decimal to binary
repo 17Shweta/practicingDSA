@@ -1,0 +1,22 @@
+
+//recursive programm to convert decimal to binary
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+void binaryEquivalent(int n)
+{
+    if(n==0)
+        return ;
+    binaryEquivalent(n/2);
+    cout<<n%2;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    binaryEquivalent(n);
+    return 0;
+}

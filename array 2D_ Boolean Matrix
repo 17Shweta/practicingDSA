@@ -1,0 +1,49 @@
+//Boolean Matrix filling 1
+
+
+#include <stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n=2;
+ int arr[n][n]={{1,0},{0,0}};
+ int arr1[n][n];
+ for(int i=0;i<n;i++)
+ {
+  for(int j=0;j<n;j++)
+   {
+     if(arr[i][j]==1)
+     {
+         for(int k=0;k<n;k++)
+         {
+             arr1[i][k]=1;
+         }
+         for(int k=0;k<n;k++)
+         {
+             arr1[k][j]=1;
+         }
+     }
+   }
+  
+ }
+ 
+  for(int i=0;i<n;i++)
+ {
+ for(int j=0;j<n;j++)
+   {
+     cout<<arr1[i][j];
+   }
+   cout<<endl;
+ }
+ 
+}
+
+output:
+11
+10
+
+
+// que link: https://www.youtube.com/watch?v=XRFeEI6PQ4w&list=PLfkr9ugeeh1q6b5NS8cLSXLIw4B204Tz7&index=14
+

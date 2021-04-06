@@ -1,0 +1,180 @@
+Activity Selection 
+Given N activities with their start and finish times. Select the maximum number of activities that can be performed by a single person, assuming that a person can only work on a single activity at a time.
+
+Note : The start time and end time of two activities may coincide.
+
+Example 1:
+
+Input:
+N = 5
+start[] = {1,3,2,5,8,5}
+end[] = {2,4,6,7,9,9}
+Output: 4
+Explanation:Perform the activites 1,2,4,5
+Example 2:
+
+Input:
+N = 4
+start[] = {1,3,2,5}
+end[] = {2,4,3,6}
+Output: 4
+Explanation:Perform the activities1,3,2,4
+Your Task :
+ Complete the function activityselection() that recieves start-time array , end-time array and number of activites as parameters and returns the maximum number of activities that can be done.
+
+Constraints:
+1 <= N <= 105
+1 <= start[i] <= end[i] <= 105
+
+Expected Time Complexity : O(NlogN)
+Expected Auxilliary Space : O(1)
+
+ 
+
+** For More Input/Output Examples Use 'Expected Output' option **
+
+
+
+
+// { Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+
+
+
+int activitySelection(int start[], int end[], int n){
+    
+    pair<int, int> p[n];
+    for(int i=0;i<n;i++)
+       {
+           p[i]={end[i],start[i]};
+        //   p[i].second = start[i];
+        //   p[i].first = end[i];
+       }
+    // for(int i=0;i<n;i++)
+        
+        
+    sort(p,p+n);
+    
+    int i=0,j=1,ans=1;
+    while(i<n&&j<n)
+    {
+        if(p[i].first<=p[j].second)
+        {
+            i=j;
+            j++;
+            ans++;
+        }
+        else
+            j++;
+    }
+    return ans;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// bool compareInterval(pair<int,int> i1 ,pair<int,int> i2) 
+// { 
+//     return (i1.second < i2.second) ?1:0; 
+// } 
+//     // In the sorted pair, if start time of an interval 
+//     // is less than end of previous interval, then there 
+//     // is an overlap 
+
+// int activitySelection(int start[], int end[], int n){
+//     // Your code here
+//     pair<int,int>pa[n];
+    
+//     for(int i=0;i<n;i++)
+//     {
+//         pa[i]={start[i],end[i]};
+//     }
+    
+//     sort(pa,pa + n,compareInterval); 
+  
+//     int select = 0;
+//     pair<int,int>fina[n];
+//     fina[0] = pa[0];
+//     for (int i = 1; i <n; i++) 
+//         {
+//             if (pa[i - 1].second <= pa[i].first) 
+//             {
+//                 fina[i] = pa[i];
+//             //   fina[i].first=pa[i].first;
+//             //   fina[i].second=pa[i].second;
+//               select++;
+//             }
+//         }
+        
+//     //int len = sizeof(fina)/sizeof(fina[0]);    
+//     int count=0;
+//     for(auto x:fina)
+//     {
+//         if(x.second!=0)
+//         count++;
+//         // cout<<x.first<<" ";
+//         // cout<<x.second<<" "<<endl;
+//     }
+    
+//     return count;
+    
+// }
+
+
+
+
+
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n;
+        cin >> n;
+        int start[n], end[n];
+        
+        for(int i=0;i<n;i++)
+            cin>>start[i];
+        for(int i=0;i<n;i++)
+            cin>>end[i];
+        
+        cout << activitySelection(start, end, n) << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends

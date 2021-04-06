@@ -1,0 +1,38 @@
+
+
+//Pattern searching algorithm
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void patternSearch(string text,string pattern)
+{
+    int n=text.length();
+    int m=pattern.length();
+    int j;
+    for(int i=0;i<=n-m;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            if(text[i+j]!=pattern[j])
+                break;
+        }
+        if(j==m)
+        cout<<i<<endl;
+    }
+}
+
+int main()
+{
+    string s1,s2;
+    cin>>s1>>s2;
+    patternSearch(s1,s2);
+    return 0;
+}
+
+output:
+ababab
+abab
+0
+2
+

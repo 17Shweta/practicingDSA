@@ -1,0 +1,124 @@
+
+
+Largest number with given sum 
+A boy lost the password of his super locker. He remembers the number of digits N as well as the sum S of all the digits of his password. He know that his password is the largest number of N digits that can be possible with given sum S. As he is busy doing his homework, help him retrieving his password.
+
+Example 1:
+
+Input:
+N = 5, S = 12
+Output: 93000
+Explanation: Sum of elements is 12.
+Largest possible 5 digit number is 93000.
+Example 2:
+
+Input:
+N = 3, S = 29
+Output: -1
+Explanation: There is no such three digit
+number whose sum is 29.
+Your Task : 
+Complete the function largestnumber() that returns  the largest possible strings as answer, -1 otherwise.
+
+Constraints:
+1 <= N <= 104
+0 <= S <= 106
+
+Expected Time Complexity : O(N)
+
+
+
+code: 
+
+
+optimised solution:
+
+string largestNumber(int n, int sum){
+    if(sum > 9*n)
+		return "-1";
+    
+    int temp;
+    string str = "";
+	for(int i=0;i<n;i++)
+	{
+	    temp = 0;
+		if(sum!=0)
+			temp = sum>9? 9 : sum;
+		str += (char)(temp + '0');
+		sum -= temp;
+	}
+	return str;
+}
+
+
+
+
+
+
+
+naive solution
+
+
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+
+
+// Function to return Largest Number
+
+
+string largestNumber(int n, int sum){
+    // Your code here
+    int res[n];
+    int t=n;
+    
+    int gotmore = 0;
+    for(int i=0;i<n;i++)
+    {
+        gotmore += 9;
+    }
+    if(sum>gotmore)
+    {
+        return "-1";
+    }    
+    
+    for(int i=0;i<n;i++)
+    {
+        if(sum>9)
+        {
+            res[i]=9;
+            sum-=9;
+        }
+        else
+        {
+            res[i] = sum; 
+            sum = 0; 
+        }
+    }
+    
+    string s = ""; 
+    for (int i = 0; i < t; i++) { 
+        s = s.append(to_string(res[i])); 
+    }
+    return s;
+}
+
+// { Driver Code Starts.
+int main()
+{
+	int t;
+	cin>>t;
+
+	while(t--)
+	{
+		int n,sum;
+		cin>>n>>sum;
+
+		cout<<largestNumber(n, sum)<<endl;
+	}
+	return 0;
+}  // } Driver Code Ends
+

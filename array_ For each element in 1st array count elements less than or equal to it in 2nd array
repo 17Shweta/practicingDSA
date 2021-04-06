@@ -1,0 +1,32 @@
+//For each element in 1st array count elements less than or equal to it in 2nd array.
+
+#include <stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int arr1[] = {1,2,7,6,4,3,15};
+  int arr2[] = {0,2,3,11,6,5};
+  
+  sort(arr1,arr1+5);
+  sort(arr2,arr2+5);
+  for (int i = 0; i < 7; i++) 
+      {
+          int count=0;
+          for(int j =0;j<6;j++)
+          {
+              if(arr1[i]>=arr2[j])
+              count++;
+          }
+          cout<<arr1[i]<<": "<<count<<endl;
+      }
+}
+
+1: 1                                                                                                                                          
+2: 2                                                                                                                                          
+4: 3                                                                                                                                          
+6: 5                                                                                                                                          
+7: 5                                                                                                                                          
+3: 3                                                                                                                                          
+15: 6   
